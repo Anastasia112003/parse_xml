@@ -13,7 +13,7 @@ import java.util.concurrent.Callable;
 public class MainRunner implements Callable<String> {
     private final ServiceHouseType serviceHouseType;
     @CommandLine.Option(names = "--file")
-    File file = new File("AS_ADDHOUSE_TYPES_20230720_68942f69_7bce_42dc_ba6b_fdc1009976fa.XML");
+    File file = new File("C:\\Users\\Анастасия\\IdeaProjects\\parse_xml");
 
     public MainRunner(ServiceHouseType serviceHouseType) {
         this.serviceHouseType = serviceHouseType;

@@ -21,7 +21,7 @@ public class HouseTypeController {
 
     @PostMapping("/save")
     public void importToDb() {
-        File file = new File("AS_ADDHOUSE_TYPES_20230720_68942f69_7bce_42dc_ba6b_fdc1009976fa.XML");
+        File file = new File("C:\\Users\\Анастасия\\IdeaProjects\\parse_xml");
         try {
             houseTypeService.parseHouseType(file);
         } catch (ParserConfigurationException e) {

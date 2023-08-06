@@ -29,7 +29,7 @@ public class HouseTypeServiceImpl implements ServiceHouseType {
 
     @Override
     public String parseHouseType(File file) throws ParserConfigurationException, SAXException, IOException {
-        if (file.getName().endsWith(".XML") && file.isFile()) {
+        if (file.getName().endsWith(".XML") && file.isFile()&& file.getName().contains("AS_ADDHOUSE_TYPES")) {
             SAXParserFactory parserFactory = SAXParserFactory.newInstance();
             SAXParser parser = parserFactory.newSAXParser();
             SAXHouseTypeHandler houseTypeHandler = new SAXHouseTypeHandler();
@@ -38,7 +38,7 @@ public class HouseTypeServiceImpl implements ServiceHouseType {
             parser.parse(fileInputStream, houseTypeHandler);
             List<HouseType> houseTypes = houseTypeHandler.getHouseTypeList();
             houseTypeRepository.saveAll(houseTypes);
-            LOGGER.info("Parsed file {} sent! ", houseTypes);
+            LOGGER.info("Parsed file "+houseTypes+ "send! ");
             fileInputStream.close();
         }
 

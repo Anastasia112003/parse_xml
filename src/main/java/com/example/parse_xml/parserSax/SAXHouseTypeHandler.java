@@ -48,9 +48,11 @@ public class SAXHouseTypeHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException {
         if (qName.equalsIgnoreCase("HOUSETYPE")) {
             houseTypeList.add(houseType);
+            if (houseTypeList.size() > 100) {
+                houseTypeList.clear();
+            }
         }
     }
-
     public List<HouseType> getHouseTypeList() {
         return houseTypeList;
     }
